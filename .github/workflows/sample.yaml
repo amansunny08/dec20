@@ -1,0 +1,12 @@
+name: manual workflow
+on: 
+   workflow_dispatch:
+jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+       - name: checkout
+         uses: actions/checkout@v3
+       - name: run command
+         run:
+            cat hello.txt  
