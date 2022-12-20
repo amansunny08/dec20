@@ -1,6 +1,14 @@
 name: manual workflow
 on: 
    workflow_dispatch:
+     inputs:
+       abc: 
+         description: for testing
+         required: true
+         default: aman
+       xyz:
+         description: for 2nd test
+
 jobs:
    build:
      runs-on: ubuntu-latest
@@ -8,5 +16,6 @@ jobs:
        - name: checkout
          uses: actions/checkout@v3
        - name: run command
-         run:
-            cat hello.txt  
+         run: |
+            echo "Hello ${{ gitbub.event.input.abc }}"
+            echo "Hello ${{github.event.input.xyz }}"
