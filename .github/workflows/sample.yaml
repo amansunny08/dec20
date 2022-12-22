@@ -28,8 +28,8 @@ jobs:
        - name: run command
          continue-on-error: True
          run: |
-            echo "Hello abc value is: ${{ github.event.inputs.abc }}" >> username.txt
-            echo "Hello xyz value is  ${{ github.event.inputs.xyz }}" >> username.txt
+            echo "hello abc value is: ${{ github.event.inputs.abc }}" >> username.txt
+            echo "hello xyz value is  ${{ github.event.inputs.xyz }}" >> username.txt
             echo "version: ${{ matrix.os }}" 
             
        - name: first-last name     
