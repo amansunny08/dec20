@@ -27,7 +27,7 @@ jobs:
             echo "Hello ${{ github.event.inputs.xyz }}"
        - name: first-last name     
          run: |   
-            echo "Hello ${{ env.First_Name }} $Last_Name" > username.txt
+            echo  "${{ env.First_Name }} $Last_Name" > username.txt
             echo "Hello $Last_Name"
             
        - name: upload file
@@ -53,5 +53,11 @@ jobs:
             echo "Hello ${{ github.event.inputs.xyz }}"
             echo "Hello ${{ env.First_Name }} $Last_Name"
             echo "Hello $Last_Name" 
+       - name: download artifacts 
+         uses: actions/download-artifact@v3   
+         with: 
+             name: my-output
+       - name: read file username.txt
+         run: cat username.txt      
 
 
