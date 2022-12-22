@@ -10,14 +10,17 @@ on:
          type: string
        xyz:
          description: for 2nd test
+env:
+  First_Name: aman
+  Last_Name: kumar      
 
 jobs:
    build:
      runs-on: ubuntu-latest
     #  continue-on-error: True
-     env:
-        First_Name: aman
-        Last_Name: kumar
+    #  env:
+    #     First_Name: aman
+    #     Last_Name: kumar
      steps:
        - name: checkout
          uses: actions/checkout@v3
