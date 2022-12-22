@@ -6,12 +6,16 @@ on:
          description: for testing
          required: true
          default: aman
+         type: string
        xyz:
          description: for 2nd test
 
 jobs:
    build:
      runs-on: ubuntu-latest
+     env:
+        First_Name: aman
+        Last_Name: kumar
      steps:
        - name: checkout
          uses: actions/checkout@v3
@@ -19,3 +23,5 @@ jobs:
          run: |
             echo "Hello ${{ github.event.inputs.abc }}"
             echo "Hello ${{ github.event.inputs.xyz }}"
+            echo "Hello ${{ env.First_Name }}"
+            echo "Hello $Last_Name"
