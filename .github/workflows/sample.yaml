@@ -30,7 +30,7 @@ jobs:
          run: |
             echo "Hello abc value is: ${{ github.event.inputs.abc }}" >> username.txt
             echo "Hello xyz value is  ${{ github.event.inputs.xyz }}" >> username.txt
-            echo "version: ${{ matrix.version }}" 
+            echo "version: ${{ matrix.os }}" 
        - name: first-last name     
          run: |   
             echo  " your full name is: ${{ env.First_Name }} $Last_Name" >> username.txt
