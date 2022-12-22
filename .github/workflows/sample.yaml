@@ -1,5 +1,6 @@
 name: manual workflow
 on:
+   push:
    workflow_dispatch:
      inputs:
        abc: 
@@ -20,6 +21,7 @@ jobs:
        matrix: 
          os: [ubuntu-latest, ubuntu-20.04, ubuntu-22.04 ]
          version: [1, 2, 4]
+         abc: [5, 6, 7]
      runs-on: ${{ matrix.os}}
      continue-on-error: True
      steps:
