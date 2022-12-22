@@ -58,7 +58,7 @@ jobs:
          run: |
             echo "Hello ${{ github.event.inputs.abc }}"
             echo "Hello ${{ github.event.inputs.xyz }}"
-            echo "Hello ${{ env.First_Name }} $Last_Name"
+            echo "hello ${{ env.First_Name }} $Last_Name"
             echo "Hello $Last_Name" 
        - name: download artifacts 
          uses: actions/download-artifact@v3   
