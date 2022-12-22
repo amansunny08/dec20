@@ -28,7 +28,7 @@ jobs:
        - name: first-last name     
          run: |   
             echo "Hello ${{ env.First_Name }} $Last_Name"
-            echo "Hello $Last_Name
+            echo "Hello $Last_Name"
 
    test:
       needs: build
@@ -44,6 +44,6 @@ jobs:
             echo "Hello ${{ github.event.inputs.abc }}"
             echo "Hello ${{ github.event.inputs.xyz }}"
             echo "Hello ${{ env.First_Name }} $Last_Name"
-            echo "Hello $Last_Name  
+            echo "Hello $Last_Name" 
 
 
