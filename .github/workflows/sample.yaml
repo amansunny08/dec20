@@ -9,6 +9,7 @@ on:
          type: string
        xyz:
          description: for 2nd test
+         required: True
 env:
   First_Name: aman
   Last_Name: kumar      
@@ -23,11 +24,11 @@ jobs:
        - name: run command
          continue-on-error: True
          run: |
-            echo "Hello ${{ github.event.inputs.abc }}"
-            echo "Hello ${{ github.event.inputs.xyz }}"
+            echo "Hello ${{ github.event.inputs.abc }}" >> username.txt
+            echo "Hello ${{ github.event.inputs.xyz }}" >> username.txt
        - name: first-last name     
          run: |   
-            echo  "${{ env.First_Name }} $Last_Name" > username.txt
+            echo  "${{ env.First_Name }} $Last_Name" >> username.txt
             echo "Hello $Last_Name"
             
        - name: upload file
