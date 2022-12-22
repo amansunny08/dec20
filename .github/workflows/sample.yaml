@@ -1,6 +1,5 @@
 name: manual workflow
 on:
-   push: 
    workflow_dispatch:
      inputs:
        abc: 
