@@ -16,7 +16,11 @@ env:
 
 jobs:
    build:
-     runs-on: ubuntu-latest
+     strategy:
+       matrix: 
+         os: [ubuntu-latest, ubuntu-20.04, ubuntu-22.04 ]
+         verion: [latest, 20.04, 22]
+     runs-on: ${{ matrix.os}}
      continue-on-error: True
      steps:
        - name: checkout
@@ -26,6 +30,7 @@ jobs:
          run: |
             echo "Hello abc value is: ${{ github.event.inputs.abc }}" >> username.txt
             echo "Hello xyz value is  ${{ github.event.inputs.xyz }}" >> username.txt
+            echo "version: ${{ matrix.version }}" >> username.txt
        - name: first-last name     
          run: |   
             echo  " your full name is: ${{ env.First_Name }} $Last_Name" >> username.txt
