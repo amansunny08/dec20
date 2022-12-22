@@ -37,9 +37,9 @@ jobs:
    test:
       needs: build
       runs-on: ubuntu-latest
-      env:
-        First_Name: AArush
-        Last_Name: Deepika
+      # env:
+      #   First_Name: AArush
+      #   Last_Name: Deepika
       steps:
        - name: checkout
          uses: actions/checkout@v3
