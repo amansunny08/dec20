@@ -26,4 +26,4 @@ jobs:
             echo "Hello ${{ github.event.inputs.abc }}"
             eco "Hello ${{ github.event.inputs.xyz }}"
             echo "Hello ${{ env.First_Name }} $Last_Name"
-            echo "Hello $Last_Name"
+            echo "Hello $Last_Name
